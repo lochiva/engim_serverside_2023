@@ -22,29 +22,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                     
+                    <?php foreach ($menus['navbar-items'] as $item): ?>
                         <li class="nav-item">
-                            <a class="nav-link <?= $menus['navbar-items'][0]['active']?>" aria-current="page" href="<?= $menus['navbar-items'][0]['link']?>">
-                             <?= $menus['navbar-items'][0]['hotword']?>
+                            <a class="nav-link <?= $item['active']?>" aria-current="page" href="<?= $item['link']?>">
+                             <?= $item['hotword']?>
                             </a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link <?= $menus['navbar-items'][1]['active']?>" href="<?= $menus['navbar-items'][0]['link']?>">
-                            <?= $menus['navbar-items'][1]['hotword']?>
-                            </a>
-                        
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= $menus['navbar-items'][2]['active']?>" href="<?= $menus['navbar-items'][0]['link']?>">
-                            <?= $menus['navbar-items'][2]['hotword']?>
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link <?= $menus['navbar-items'][3]['active']?>" href="<?= $menus['navbar-items'][3]['link']?>">
-                            <?= $menus['navbar-items'][3]['hotword']?> 
-                            </a>
-                        </li>
+                        <?php endforeach; ?>
+
                     </ul>
                 </div>
             </div>
@@ -66,46 +52,25 @@
             </div>
             <!-- Content Row-->
             <div class="row gx-4 gx-lg-5">
+                <?php foreach ($cards as $card): ?>
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h2 class="card-title"><?= $cards[0]['title'] ?></h2>
-                            <p class="card-text"><?= $cards[0]['description'] ?></p>
+                            <h2 class="card-title"><?= $card['title'] ?></h2>
+                            <p class="card-text"><?= $card['description'] ?></p>
                         </div>
                         <div class="card-footer">
-                            <a class="btn btn-primary btn-sm" href="<?= $cards[0]['link']?>">
-                            <?= $cards[0]['hotword']?>
+                            <a class="btn btn-primary btn-sm" href="<?= $card['link']?>">
+                            <?= $card['hotword']?>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h2 class="card-title"><?= $cards[1]['title'] ?></h2>
-                            <p class="card-text"><?= $cards[1]['description'] ?></p>
-                        </div>
-                        <div class="card-footer">
-                            <a class="btn btn-primary btn-sm" href="<?= $cards[1]['link']?>">
-                                <?= $cards[1]['hotword']?>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h2 class="card-title"><?= $cards[2]['title'] ?></h2>
-                            <p class="card-text"><?= $cards[2]['description'] ?></p>
-                        </div>
-                        <div class="card-footer">
-                            <a class="btn btn-primary btn-sm" href="<?= $cards[2]['link']?>">
-                                <?=$cards[2]['hotword']?>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach; ?>
             </div>
+
+         
+     
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
